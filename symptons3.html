@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Malaria Symptoms Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .symptoms-form {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .symptoms-form h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="symptoms-form">
+        <h2>Malaria Symptoms Checker</h2>
+        <p>Please check the symptoms you are experiencing:</p>
+        <form action="#" method="post" id="symptomsForm">
+            <label>
+                <input type="checkbox" name="symptoms[]" value="fever">
+                Fever
+            </label><br>
+            <label>
+                <input type="checkbox" name="symptoms[]" value="chills">
+                Chills
+            </label><br>
+            <label>
+                <input type="checkbox" name="symptoms[]" value="headache">
+                Headache
+            </label><br>
+            <label>
+                <input type="checkbox" name="symptoms[]" value="muscle-pain">
+                Muscle Pain
+            </label><br>
+            <label>
+                <input type="checkbox" name="symptoms[]" value="fatigue">
+                Fatigue
+            </label><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('symptomsForm');
+        form.addEventListener('submit', function(event) {
+            const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedCheckboxes.length === 0) {
+                event.preventDefault();
+                alert('Please select at least one symptom.');
+            }
+        });
+    </script>
+</body>
+</html>

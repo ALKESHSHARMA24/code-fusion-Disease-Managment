@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COVID-19 Symptoms Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>COVID-19 Symptoms Checker</h2>
+    <p>Please check the symptoms you are experiencing:</p>
+    <form action="#" method="post" id="symptomsForm">
+        <label>
+            <input type="checkbox" name="symptoms[]" value="fever">
+            Fever
+        </label><br>
+        <label>
+            <input type="checkbox" name="symptoms[]" value="cough">
+            Cough
+        </label><br>
+        <label>
+            <input type="checkbox" name="symptoms[]" value="fatigue">
+            Fatigue
+        </label><br>
+        <label>
+	<input type="checkbox" name="symptoms[]" value="loss-of-taste-or-smell">
+            Loss of Taste or Smell
+        </label><br>
+        <label>
+            <input type="checkbox" name="symptoms[]" value="muscle-aches">
+            Muscle Aches
+        </label><br>
+        <label>
+            <input type="checkbox" name="symptoms[]" value="sore-throat">
+            Sore Throat
+        </label><br>
+        <!-- Other checkboxes... -->
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        // JavaScript for enhancing user experience
+        const form = document.getElementById('symptomsForm');
+        form.addEventListener('submit', function(event) {
+            const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedCheckboxes.length === 0) {
+                event.preventDefault();
+                alert('Please select at least one symptom.');
+            }
+        });
+    </script>
+</body>
+</html>
